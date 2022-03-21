@@ -1,6 +1,19 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 export const BookDetailsPage = () => {
   // Get book details based on ID whenever user lands on the page
   // ID will come from route
+  const data = useParams();
+  const [dataa, setDataa] = useState([]);
+  const bookId = data.id.split("")[1]
+   useEffect(() => {
+    axios.get(`http://localhost:8080/books?id=${bookId}`).then((response) => {
+      console.log(response);
+      setDataa(response.data);
+    })
+  }, []);
 
   return (
     <>
