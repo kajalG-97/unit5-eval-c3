@@ -15,7 +15,7 @@ export const Navbar = () => {
          }}>Mythology</button>
          <button onClick={() =>{
            Navigate("/section/history");
-         }}>history</button>
+         }}></button>
          <button onClick={() =>{
            Navigate("/");
          }}></button>
